@@ -5,3 +5,11 @@
 For the sake of this practice session, we will try to mimic iOS calculator app with HTML, CSS and JavaScript as close as possible.
 
 We will start by creating a visual representation of the calculator app using HTML and CSS. Then we will add functionality to the calculator using JavaScript.
+
+---
+
+
+## Step 1: Create the HTML structure
+
+Create a new HTML file and name it `index.html`. Add basic HTML tags to the file.
+
