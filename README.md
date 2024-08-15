@@ -13,3 +13,8 @@ We will start by creating a visual representation of the calculator app using HT
 
 Create a new HTML file and name it `index.html`. Add basic HTML tags to the file.
 
+
+## Step 2: Add HTML tags for the calculator layout
+
+Add the necessary HTML tags to create the calculator layout. We'll put the buttons in the order they appear in the iOS calculator app. This way we won't have to worry about moving the buttons around later.
+
