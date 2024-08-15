@@ -18,3 +18,9 @@ Create a new HTML file and name it `index.html`. Add basic HTML tags to the file
 
 Add the necessary HTML tags to create the calculator layout. We'll put the buttons in the order they appear in the iOS calculator app. This way we won't have to worry about moving the buttons around later.
 
+
+## Step 3: Style the calculator layout
+
+For the sake of simplicity, we will be putting our CSS code in the same file as our HTML code.
+
+The calculator itself is centered on the page. The calculator display is at the top, and the buttons are below it. The button layout is a 4x5 grid. We will use CSS Grid to create the layout.
