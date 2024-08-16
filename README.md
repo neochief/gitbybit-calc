@@ -119,3 +119,8 @@ We will add keyboard support to the calculator app. Also, add titles to the butt
 ## Step 22: Highlight buttons triggered with keyboard
 
 When a button is triggered with a keyboard, we want to visually indicate that it is active. We will add an active class to the button when it is triggered with a keyboard.
+
+
+## Step 23: Add UI scaling so that the calculator looks consistent on mobile devices
+
+The goal is to have the calculator look the same as native app when opened from the mobile device with small screen.
