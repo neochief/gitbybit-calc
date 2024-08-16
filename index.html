@@ -162,6 +162,9 @@
                     display = '';
                 }
                 if (type === 'number') {
+                    if (!hasEnoughSpace()) {
+                        return;
+                    }
                     display += n.toString();
                 } else {
                     display = n.toString();
@@ -173,7 +176,9 @@
 
             function pressPoint() {
                 if (type === 'number') {
-                    if (display.includes('.')) {
+                    if (!hasEnoughSpace({forPointAndAnotherDigit: true})) {
+                        return;
+                    } else if (display.includes('.')) {
                         return;
                     }
                     display += ".".toString();
@@ -184,6 +189,12 @@
                 previousType = type;
                 type = 'number';
                 updateControls();
+            }
+
+            function hasEnoughSpace(options = {}) {
+                const accountForMinus = display.startsWith(HYPHEN) ? 1 : 0;
+                const forAnotherDigitAfterPoint = options?.forPointAndAnotherDigit ? 1 : 0;
+                return display.length < (12 + accountForMinus - forAnotherDigitAfterPoint);
             }
 
             function pressOperation(o) {
@@ -271,10 +282,17 @@
             }
 
             function roundResult(value) {
+                const integerLength = Math.trunc(value).toString().length;
+                if (integerLength > 12) {
+                    return value.toExponential(6);
+                }
+
                 if (Number.isInteger(value)) {
                     return value.toString();
                 }
-                return value.toFixed(10).replace(/\.?0+$/, '');
+
+                const precision = 12 - integerLength;
+                return value.toFixed(precision).replace(/\.?0+$/, '');
             }
 
             function formatDisplay(value) {

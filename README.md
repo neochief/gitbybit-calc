@@ -100,3 +100,7 @@ When the decimal button is clicked, we want to add a decimal point to the number
 
 JavaScript is a peculiar language in which 0.3 + 0.6 equals to 0.8999999999999999. This is due to the way floating-point numbers are represented in JavaScript. The proper way to fix this is to use the big integer library, but for the sake of simplicity, we will round the results to 10 decimal places.
 
+
+## Step 19: Limit the number of characters on the display
+
+The iOS calculator app limits the number of characters on the display to 9. We'll do better than that and allow 12 characters on the display. We will add a check to the display to limit the number of characters to 12. Also, we will cut out the extra decimals from the result on big numbers, to make it fit the display. For very large numbers, we display them as exponential after 12 digits.
