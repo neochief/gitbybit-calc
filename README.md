@@ -24,3 +24,9 @@ Add the necessary HTML tags to create the calculator layout. We'll put the butto
 For the sake of simplicity, we will be putting our CSS code in the same file as our HTML code.
 
 The calculator itself is centered on the page. The calculator display is at the top, and the buttons are below it. The button layout is a 4x5 grid. We will use CSS Grid to create the layout.
+
+
+## Step 4: Add CSS classes to the buttons
+
+There are three groups of buttons in the calculator app: numbers, operators, and special buttons. We will add classes to the buttons to differentiate between them. While we at it, we can also add ids to the buttons to make it easier to select them in JavaScript later.
+
