@@ -44,3 +44,8 @@ Add colors to the button groups to make them visually distinct from each other. 
 ## Step 7: Make the plus/minus button look similar to % (as in iOS calculator app)
 
 Technically, in math the ± character doesn't mean toggling between positive and negative numbers. Designers of the iOS calculator app uses custom character for this purpose, that resembles the % character.
+
+
+## Step 8: Improve accessibility of the buttons
+
+The plus/minus contains percent character, which will be misleading when used by a user with impaired vision, who uses the calculator with the help of a screen reader. We should add an aria-label to the button to that describes the function of the button. We should also hide the percent character from the screen reader. While we at it, we can also add aria-labels to the other special buttons.
