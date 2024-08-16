@@ -86,7 +86,7 @@
                 }
             }
 
-            &:active {
+            &:active, &.active {
                 background-color: #FCC78D;
             }
         }
@@ -204,6 +204,13 @@
                 document.querySelector('.clear').ariaLabel = hasInput ? 'Clear' : 'Clear all';
 
                 document.querySelector('.display').innerText = display;
+
+                document.querySelectorAll('.operation').forEach((button) => {
+                    button.classList.remove('active');
+                });
+                if (type === 'operation' && operator) {
+                    document.querySelector('.' + operator).classList.add('active');
+                }
             }
 
             for (let i = 0; i <= 9; i++) {

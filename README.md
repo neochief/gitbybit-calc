@@ -64,3 +64,8 @@ When the Clear button is clicked, we want to clear the display. We will add an e
 ## Step 11: Implement operations
 
 Adding operations makes the calculator more useful. We will add event listeners to the operation buttons to store the operation and the result in the memory. As the operations clicked further, we will calculate the updated result and display it on the screen.
+
+
+## Step 12: Add the active classes to operations
+
+When an operation is clicked, we want to visually indicate that it is active. We will add an active class to the operation buttons when they are clicked.
