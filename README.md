@@ -69,3 +69,8 @@ Adding operations makes the calculator more useful. We will add event listeners 
 ## Step 12: Add the active classes to operations
 
 When an operation is clicked, we want to visually indicate that it is active. We will add an active class to the operation buttons when they are clicked.
+
+
+## Step 13: Implement the Equal button
+
+When the Equal button is clicked, we want to calculate the result of the operation and display it on the screen. We will add an event listener to the Equal button to calculate the result when it is clicked.

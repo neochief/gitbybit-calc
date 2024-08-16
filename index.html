@@ -198,6 +198,15 @@
                 display = result.toString();
             }
 
+            function pressEqual() {
+                if (type === 'operation' || type === 'number') {
+                    operand = parseFloat(display);
+                }
+                type = 'equal';
+                calculate();
+                updateControls();
+            }
+
             function updateControls() {
                 const hasInput = result || operand || type === 'number';
                 document.querySelector('.clear').innerText = hasInput ? 'C' : 'AC';
@@ -223,6 +232,10 @@
                 document.querySelector('.' + operation).addEventListener('click', () => {
                     pressOperation(operation);
                 });
+            });
+
+            document.querySelector(".equal").addEventListener('click', () => {
+                pressEqual();
             });
 
             document.querySelector(".clear").addEventListener('click', () => {
