@@ -28,8 +28,38 @@
             font-size: 72px;
             color: white;
             text-align: right;
+            height: 84px;
             display: flex;
+            align-items: center;
             flex-direction: row-reverse;
+
+            &[data-length="7"] {
+                font-size: 69px;
+            }
+
+            &[data-length="8"] {
+                font-size: 60px;
+            }
+
+            &[data-length="9"] {
+                font-size: 53px;
+            }
+
+            &[data-length="10"] {
+                font-size: 48px;
+            }
+
+            &[data-length="11"] {
+                font-size: 44px;
+            }
+
+            &[data-length="12"] {
+                font-size: 40px;
+            }
+
+            &[data-length="13"] {
+                font-size: 37px;
+            }
         }
 
         .buttons {
@@ -306,6 +336,7 @@
                 document.querySelector('.clear').ariaLabel = hasInput ? 'Clear' : 'Clear all';
 
                 document.querySelector('.display').innerText = formatDisplay(display);
+                document.querySelector('.display').dataset.length = display.length.toString();
 
                 document.querySelectorAll('.operation').forEach((button) => {
                     button.classList.remove('active');

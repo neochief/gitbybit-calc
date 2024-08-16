@@ -104,3 +104,8 @@ JavaScript is a peculiar language in which 0.3 + 0.6 equals to 0.899999999999999
 ## Step 19: Limit the number of characters on the display
 
 The iOS calculator app limits the number of characters on the display to 9. We'll do better than that and allow 12 characters on the display. We will add a check to the display to limit the number of characters to 12. Also, we will cut out the extra decimals from the result on big numbers, to make it fit the display. For very large numbers, we display them as exponential after 12 digits.
+
+
+## Step 20: Fit 12 characters on the display visually
+
+We will add a font-size adjustment to the display to make sure that 12 characters fit on the display. We will also add a transition to the display to make the font-size change more visually appealing.
