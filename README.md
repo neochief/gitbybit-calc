@@ -74,3 +74,8 @@ When an operation is clicked, we want to visually indicate that it is active. We
 ## Step 13: Implement the Equal button
 
 When the Equal button is clicked, we want to calculate the result of the operation and display it on the screen. We will add an event listener to the Equal button to calculate the result when it is clicked.
+
+
+## Step 14: Implement extra use cases of the Equal button
+
+The iOS calculator app has some extra use cases for the Equal button. ... → Equal → Number → Equal should repeat the last operation with the given Number. ... → Equal → Number1 → Operation → Number2 → Equal should perform the operation on the Number1 and Number2, discarding the previous results.

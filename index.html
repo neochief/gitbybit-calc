@@ -139,7 +139,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            let display, type, operator, operand, result;
+            let display, type, operator, operand, result, previousType, savedOperand;
 
             function clearAll() {
                 result = 0;
@@ -147,6 +147,8 @@
                 type = undefined;
                 operator = undefined;
                 operand = 0;
+                previousType = undefined;
+                savedOperand = 0;
                 updateControls();
             }
 
@@ -161,15 +163,19 @@
                 } else {
                     display = n.toString();
                 }
+                previousType = type;
                 type = 'number';
                 updateControls();
             }
 
             function pressOperation(o) {
-                if (!type || type === 'number') {
+                if (previousType === 'equal' && type === 'number') {
+                    result = parseFloat(display);
+                } else if (!type || type === 'number') {
                     operand = parseFloat(display);
                     calculate();
                 }
+                previousType = type;
                 type = 'operation';
                 operator = o;
                 updateControls();
@@ -199,9 +205,15 @@
             }
 
             function pressEqual() {
-                if (type === 'operation' || type === 'number') {
+                // 2 + 3 = 5 = (should show 8)
+                if (previousType === 'equal' && type === 'number') {
+                    result = parseFloat(display);
+                    operand = savedOperand;
+                } else if (type === 'operation' || type === 'number') {
                     operand = parseFloat(display);
+                    savedOperand = operand;
                 }
+                previousType = type;
                 type = 'equal';
                 calculate();
                 updateControls();
