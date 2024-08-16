@@ -49,3 +49,8 @@ Technically, in math the ± character doesn't mean toggling between positive and
 ## Step 8: Improve accessibility of the buttons
 
 The plus/minus contains percent character, which will be misleading when used by a user with impaired vision, who uses the calculator with the help of a screen reader. We should add an aria-label to the button to that describes the function of the button. We should also hide the percent character from the screen reader. While we at it, we can also add aria-labels to the other special buttons.
+
+
+## Step 9: Add event listeners to the number buttons
+
+Let's finally bring life to our app. We'll start by adding event listeners to the number buttons. When a number button is clicked, we want to append the number to the display.

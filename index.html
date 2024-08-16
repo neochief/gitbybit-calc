@@ -136,6 +136,31 @@
             }
         }
     </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let display, type;
+
+            function pressNumber(n) {
+                if (!display || display === '0') {
+                    display = '';
+                }
+                display += n.toString();
+                type = 'number';
+                updateControls();
+            }
+
+            function updateControls() {
+                document.querySelector('.display').innerText = display;
+            }
+
+            for (let i = 0; i <= 9; i++) {
+                document.querySelector('.b' + i.toString()).addEventListener('click', () => {
+                    pressNumber(i);
+                });
+            }
+        });
+    </script>
 </head>
 <body>
 <div class="calculator">
