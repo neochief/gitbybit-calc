@@ -90,7 +90,7 @@
                 }
             }
 
-            &:active {
+            &:active, &.kbd {
                 background-color: #737373;
             }
         }
@@ -116,7 +116,7 @@
                 }
             }
 
-            &:active, &.active {
+            &:active, &.kbd, &.active {
                 background-color: #FCC78D;
             }
         }
@@ -132,7 +132,7 @@
                 }
             }
 
-            &:active {
+            &:active, &.kbd {
                 background-color: #D9D9D9;
             }
         }
@@ -378,26 +378,43 @@
                 pressPercent();
             });
 
+            function flashButton(buttonClass) {
+                document.querySelector(buttonClass).classList.add('kbd');
+                setTimeout(() => {
+                    document.querySelector(buttonClass).classList.remove('kbd');
+                }, 100);
+            }
+
             document.addEventListener('keydown', (event) => {
                 if (event.key === '_' || (event.key === '-' && (event.ctrlKey || event.metaKey || event.altKey))) {
+                    flashButton(".plusminus");
                     pressPlusMinus();
                 } else if (event.key >= '0' && event.key <= '9') {
+                    flashButton(".b" + event.key);
                     pressNumber(parseInt(event.key));
-                } else if (event.key === '.') {
+                } else if (event.key === '.' || event.key === ',') {
+                    flashButton(".point");
                     pressPoint();
                 } else if (event.key === '+') {
+                    flashButton(".add");
                     pressOperation('add');
                 } else if (event.key === '-') {
+                    flashButton(".subtract");
                     pressOperation('subtract');
                 } else if (event.key === '*') {
+                    flashButton(".multiply");
                     pressOperation('multiply');
                 } else if (event.key === '/') {
+                    flashButton(".divide");
                     pressOperation('divide');
                 } else if (event.key === '%') {
+                    flashButton(".percent");
                     pressPercent();
                 } else if (event.key === 'Enter' || event.key === '=') {
+                    flashButton(".equal");
                     pressEqual();
                 } else if (event.key === 'Escape') {
+                    flashButton(".clear");
                     clearAll();
                 }
             });

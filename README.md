@@ -114,3 +114,8 @@ We will add a font-size adjustment to the display to make sure that 12 character
 ## Step 21: Add keyboard support
 
 We will add keyboard support to the calculator app. Also, add titles to the buttons to describe their function and explain the keyboard shortcuts.
+
+
+## Step 22: Highlight buttons triggered with keyboard
+
+When a button is triggered with a keyboard, we want to visually indicate that it is active. We will add an active class to the button when it is triggered with a keyboard.
