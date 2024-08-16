@@ -45,6 +45,24 @@
             padding: 0;
             border: none;
             border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.1s ease;
+        }
+
+        /* Number buttons (0-9) */
+        .number {
+            background-color: #333333;
+            color: white;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: color-mix(in srgb, #333333 50%, #737373);
+                }
+            }
+
+            &:active {
+                background-color: #737373;
+            }
         }
 
         .b0 {
@@ -54,6 +72,39 @@
             /* Add right padding of the size of a whole button plus gap, so
              that zero is always centered, as if it was in one grid cell */
             padding-right: calc((100% - 12px) / 2 + 12px);
+        }
+
+        /* Operator buttons (÷, ×, +, −, =) */
+        .operation {
+            font-size: 48px;
+            background-color: #FF9F0A;
+            color: white;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: color-mix(in srgb, #FF9F0A 50%, #FCC78D);
+                }
+            }
+
+            &:active {
+                background-color: #FCC78D;
+            }
+        }
+
+        /* Special buttons (AC, ±, %) */
+        .special {
+            background-color: #A5A5A5;
+            color: black;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: color-mix(in srgb, #A5A5A5 50%, #D9D9D9);
+                }
+            }
+
+            &:active {
+                background-color: #D9D9D9;
+            }
         }
     </style>
 </head>

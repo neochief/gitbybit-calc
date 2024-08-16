@@ -34,3 +34,8 @@ There are three groups of buttons in the calculator app: numbers, operators, and
 ## Step 5: Make the zero button wider
 
 The zero button is wider than the other buttons in the calculator app. We will make the zero button wider by targeting the .b0 class that we added on the previous step.
+
+
+## Step 6: Style the button groups
+
+Add colors to the button groups to make them visually distinct from each other. We will also add transitions to the button colors to make the hovering and clicking effects more visually appealing. The operator buttons also look better with larger text.
