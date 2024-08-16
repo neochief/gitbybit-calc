@@ -124,3 +124,8 @@ When a button is triggered with a keyboard, we want to visually indicate that it
 ## Step 23: Add UI scaling so that the calculator looks consistent on mobile devices
 
 The goal is to have the calculator look the same as native app when opened from the mobile device with small screen.
+
+
+## Step 24: Fix iOS Safari bug with the viewport height, scrolling, and touch events
+
+No comments.
