@@ -54,3 +54,8 @@ The plus/minus contains percent character, which will be misleading when used by
 ## Step 9: Add event listeners to the number buttons
 
 Let's finally bring life to our app. We'll start by adding event listeners to the number buttons. When a number button is clicked, we want to append the number to the display.
+
+
+## Step 10: Implement the Clear button
+
+When the Clear button is clicked, we want to clear the display. We will add an event listener to the Clear button to clear the display when it is clicked.

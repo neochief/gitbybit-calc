@@ -141,6 +141,14 @@
         document.addEventListener('DOMContentLoaded', () => {
             let display, type;
 
+            function clearAll() {
+                display = '0';
+                type = undefined;
+                updateControls();
+            }
+
+            clearAll();
+
             function pressNumber(n) {
                 if (!display || display === '0') {
                     display = '';
@@ -151,6 +159,9 @@
             }
 
             function updateControls() {
+                document.querySelector('.clear').innerText = type === 'number' ? 'C' : 'AC';
+                document.querySelector('.clear').ariaLabel = type === 'number' ? 'Clear' : 'Clear all';
+
                 document.querySelector('.display').innerText = display;
             }
 
@@ -159,6 +170,10 @@
                     pressNumber(i);
                 });
             }
+
+            document.querySelector(".clear").addEventListener('click', () => {
+                clearAll();
+            });
         });
     </script>
 </head>
