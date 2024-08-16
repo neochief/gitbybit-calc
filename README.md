@@ -94,3 +94,9 @@ In the iOS calculator app, there are two use cases for the percent button. The f
 ## Step 17: Implement the decimal button
 
 When the decimal button is clicked, we want to add a decimal point to the number on the display. We will add an event listener to the decimal button to add a decimal point to the number when it is clicked.
+
+
+## Step 18: Handle JavaScript floating point precision issues
+
+JavaScript is a peculiar language in which 0.3 + 0.6 equals to 0.8999999999999999. This is due to the way floating-point numbers are represented in JavaScript. The proper way to fix this is to use the big integer library, but for the sake of simplicity, we will round the results to 10 decimal places.
+
