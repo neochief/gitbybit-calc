@@ -39,3 +39,8 @@ The zero button is wider than the other buttons in the calculator app. We will m
 ## Step 6: Style the button groups
 
 Add colors to the button groups to make them visually distinct from each other. We will also add transitions to the button colors to make the hovering and clicking effects more visually appealing. The operator buttons also look better with larger text.
+
+
+## Step 7: Make the plus/minus button look similar to % (as in iOS calculator app)
+
+Technically, in math the ± character doesn't mean toggling between positive and negative numbers. Designers of the iOS calculator app uses custom character for this purpose, that resembles the % character.

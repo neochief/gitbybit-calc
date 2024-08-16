@@ -106,6 +106,35 @@
                 background-color: #D9D9D9;
             }
         }
+
+        /* Special formatting for +/- so that it look similar to the % */
+        .plusminus {
+            position: relative;
+
+            &:before {
+                content: "+";
+                display: block;
+                background: inherit;
+                border-radius: 100%;
+                font-size: 0.75em;
+                line-height: 0.75em;
+                position: absolute;
+                bottom: 45%;
+                right: 50%;
+            }
+
+            &:after {
+                content: "−";
+                display: block;
+                background: inherit;
+                border-radius: 100%;
+                font-size: 0.75em;
+                line-height: 0.75em;
+                position: absolute;
+                top: 45%;
+                left: 50%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -115,7 +144,7 @@
     </div>
     <div class="buttons">
         <button class="special clear">AC</button>
-        <button class="special plusminus">±</button>
+        <button class="special plusminus">%</button>
         <button class="special percent">%</button>
         <button class="operation divide">÷</button>
 
