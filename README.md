@@ -84,3 +84,8 @@ The iOS calculator app has some extra use cases for the Equal button. ... → Eq
 ## Step 15: Implement the plus/minus button
 
 When the plus/minus button is clicked, we want to toggle the sign of the number on the display. We will add an event listener to the plus/minus button to toggle the sign of the number when it is clicked. Also, it's time to add some basic formating of the result on the display, so that default hyphen characters would be replaced with correct minus character.
+
+
+## Step 16: Implement the percent button
+
+In the iOS calculator app, there are two use cases for the percent button. The first use case is to calculate the percentage of the number on the display. The second use case arise in time of operation, where the percent button is used to calculate the percentage of the first number, which is then used in the operation with the second number. We will implement both use cases.

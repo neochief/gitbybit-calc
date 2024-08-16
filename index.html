@@ -204,6 +204,19 @@
                 updateControls();
             }
 
+            function pressPercent() {
+                if (type === 'number') {
+                    if (result) {
+                        const base = operator ? result : operand;
+                        display = (base / 100 * parseFloat(display)).toString();
+                    } else {
+                        display = (parseFloat(display) / 100).toString();
+                    }
+                }
+
+                updateControls();
+            }
+
             function calculate() {
                 if (operator) {
                     switch (operator) {
@@ -284,6 +297,10 @@
 
             document.querySelector(".plusminus").addEventListener('click', () => {
                 pressPlusMinus();
+            });
+
+            document.querySelector(".percent").addEventListener('click', () => {
+                pressPercent();
             });
         });
     </script>
