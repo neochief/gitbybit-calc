@@ -79,3 +79,8 @@ When the Equal button is clicked, we want to calculate the result of the operati
 ## Step 14: Implement extra use cases of the Equal button
 
 The iOS calculator app has some extra use cases for the Equal button. ... → Equal → Number → Equal should repeat the last operation with the given Number. ... → Equal → Number1 → Operation → Number2 → Equal should perform the operation on the Number1 and Number2, discarding the previous results.
+
+
+## Step 15: Implement the plus/minus button
+
+When the plus/minus button is clicked, we want to toggle the sign of the number on the display. We will add an event listener to the plus/minus button to toggle the sign of the number when it is clicked. Also, it's time to add some basic formating of the result on the display, so that default hyphen characters would be replaced with correct minus character.
