@@ -139,11 +139,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            let display, type;
+            let display, type, operator, operand, result;
 
             function clearAll() {
+                result = 0;
                 display = '0';
                 type = undefined;
+                operator = undefined;
+                operand = 0;
                 updateControls();
             }
 
@@ -153,14 +156,52 @@
                 if (!display || display === '0') {
                     display = '';
                 }
-                display += n.toString();
+                if (type === 'number') {
+                    display += n.toString();
+                } else {
+                    display = n.toString();
+                }
                 type = 'number';
                 updateControls();
             }
 
+            function pressOperation(o) {
+                if (!type || type === 'number') {
+                    operand = parseFloat(display);
+                    calculate();
+                }
+                type = 'operation';
+                operator = o;
+                updateControls();
+            }
+
+            function calculate() {
+                if (operator) {
+                    switch (operator) {
+                        case 'add':
+                            result = result + operand;
+                            break;
+                        case 'subtract':
+                            result = result - operand;
+                            break;
+                        case 'multiply':
+                            result = result * operand;
+                            break;
+                        case 'divide':
+                            result = result / operand;
+                            break;
+                    }
+                } else {
+                    result = operand;
+                }
+
+                display = result.toString();
+            }
+
             function updateControls() {
-                document.querySelector('.clear').innerText = type === 'number' ? 'C' : 'AC';
-                document.querySelector('.clear').ariaLabel = type === 'number' ? 'Clear' : 'Clear all';
+                const hasInput = result || operand || type === 'number';
+                document.querySelector('.clear').innerText = hasInput ? 'C' : 'AC';
+                document.querySelector('.clear').ariaLabel = hasInput ? 'Clear' : 'Clear all';
 
                 document.querySelector('.display').innerText = display;
             }
@@ -170,6 +211,12 @@
                     pressNumber(i);
                 });
             }
+
+            ["add", "subtract", "multiply", "divide"].forEach((operation) => {
+                document.querySelector('.' + operation).addEventListener('click', () => {
+                    pressOperation(operation);
+                });
+            });
 
             document.querySelector(".clear").addEventListener('click', () => {
                 clearAll();
