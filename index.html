@@ -377,6 +377,30 @@
             document.querySelector(".percent").addEventListener('click', () => {
                 pressPercent();
             });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === '_' || (event.key === '-' && (event.ctrlKey || event.metaKey || event.altKey))) {
+                    pressPlusMinus();
+                } else if (event.key >= '0' && event.key <= '9') {
+                    pressNumber(parseInt(event.key));
+                } else if (event.key === '.') {
+                    pressPoint();
+                } else if (event.key === '+') {
+                    pressOperation('add');
+                } else if (event.key === '-') {
+                    pressOperation('subtract');
+                } else if (event.key === '*') {
+                    pressOperation('multiply');
+                } else if (event.key === '/') {
+                    pressOperation('divide');
+                } else if (event.key === '%') {
+                    pressPercent();
+                } else if (event.key === 'Enter' || event.key === '=') {
+                    pressEqual();
+                } else if (event.key === 'Escape') {
+                    clearAll();
+                }
+            });
         });
     </script>
 </head>
@@ -386,31 +410,31 @@
         0
     </div>
     <div class="buttons">
-        <button class="special clear" aria-label="Clear">AC</button>
-        <button class="special plusminus" aria-label="Negate the displayed value">
+        <button class="special clear" aria-label="Clear" title="Clear (or press Esc)">AC</button>
+        <button class="special plusminus" aria-label="Negate the displayed value" title="Negate the displayed value (or press Shift-Minus [-])">
             <span aria-hidden="true">%</span>
         </button>
-        <button class="special percent" aria-label="Percent">%</button>
-        <button class="operation divide" aria-label="Divide">÷</button>
+        <button class="special percent" aria-label="Percent" title="Percent (or press %)">%</button>
+        <button class="operation divide" aria-label="Divide" title="Divide (or press /)">÷</button>
 
         <button class="number b7">7</button>
         <button class="number b8">8</button>
         <button class="number b9">9</button>
-        <button class="operation multiply" aria-label="Multiply">×</button>
+        <button class="operation multiply" aria-label="Multiply" title="Multiply (or press *)">×</button>
 
         <button class="number b4">4</button>
         <button class="number b5">5</button>
         <button class="number b6">6</button>
-        <button class="operation subtract" aria-label="Subtract">−</button>
+        <button class="operation subtract" aria-label="Subtract" title="Subtract (or press -)">−</button>
 
         <button class="number b1">1</button>
         <button class="number b2">2</button>
         <button class="number b3">3</button>
-        <button class="operation add" aria-label="Add">+</button>
+        <button class="operation add" aria-label="Add" title="Add (or press +)">+</button>
 
         <button class="number b0">0</button>
         <button class="number point" aria-label="Decimal point">.</button>
-        <button class="operation equal" aria-label="Equal">=</button>
+        <button class="operation equal" aria-label="Equal" title="Equal (or press Return)">=</button>
     </div>
 </div>
 </body>

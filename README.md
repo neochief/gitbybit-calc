@@ -109,3 +109,8 @@ The iOS calculator app limits the number of characters on the display to 9. We'l
 ## Step 20: Fit 12 characters on the display visually
 
 We will add a font-size adjustment to the display to make sure that 12 characters fit on the display. We will also add a transition to the display to make the font-size change more visually appealing.
+
+
+## Step 21: Add keyboard support
+
+We will add keyboard support to the calculator app. Also, add titles to the buttons to describe their function and explain the keyboard shortcuts.
