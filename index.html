@@ -171,6 +171,21 @@
                 updateControls();
             }
 
+            function pressPoint() {
+                if (type === 'number') {
+                    if (display.includes('.')) {
+                        return;
+                    }
+                    display += ".".toString();
+                } else {
+                    display = '0.';
+                }
+
+                previousType = type;
+                type = 'number';
+                updateControls();
+            }
+
             function pressOperation(o) {
                 if (previousType === 'equal' && type === 'number') {
                     result = parseFloat(display);
@@ -280,6 +295,10 @@
                     pressNumber(i);
                 });
             }
+
+            document.querySelector(".point").addEventListener('click', () => {
+                pressPoint();
+            });
 
             ["add", "subtract", "multiply", "divide"].forEach((operation) => {
                 document.querySelector('.' + operation).addEventListener('click', () => {

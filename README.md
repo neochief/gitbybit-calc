@@ -89,3 +89,8 @@ When the plus/minus button is clicked, we want to toggle the sign of the number 
 ## Step 16: Implement the percent button
 
 In the iOS calculator app, there are two use cases for the percent button. The first use case is to calculate the percentage of the number on the display. The second use case arise in time of operation, where the percent button is used to calculate the percentage of the first number, which is then used in the operation with the second number. We will implement both use cases.
+
+
+## Step 17: Implement the decimal button
+
+When the decimal button is clicked, we want to add a decimal point to the number on the display. We will add an event listener to the decimal button to add a decimal point to the number when it is clicked.
