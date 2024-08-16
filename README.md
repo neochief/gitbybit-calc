@@ -30,3 +30,7 @@ The calculator itself is centered on the page. The calculator display is at the 
 
 There are three groups of buttons in the calculator app: numbers, operators, and special buttons. We will add classes to the buttons to differentiate between them. While we at it, we can also add ids to the buttons to make it easier to select them in JavaScript later.
 
+
+## Step 5: Make the zero button wider
+
+The zero button is wider than the other buttons in the calculator app. We will make the zero button wider by targeting the .b0 class that we added on the previous step.

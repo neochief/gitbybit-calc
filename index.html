@@ -46,6 +46,15 @@
             border: none;
             border-radius: 50%;
         }
+
+        .b0 {
+            grid-column: span 2;
+            border-radius: 64px;
+            aspect-ratio: auto;
+            /* Add right padding of the size of a whole button plus gap, so
+             that zero is always centered, as if it was in one grid cell */
+            padding-right: calc((100% - 12px) / 2 + 12px);
+        }
     </style>
 </head>
 <body>
